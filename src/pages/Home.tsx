@@ -1,17 +1,16 @@
-import React from "react";
 import Card from "../components/Card/Card";
+import MoviesArticle from "../components/MovieArticle/MoviesArticle";
+
+
 import useFetchTrend from "../hooks/useFetchTrend";
 
 export default function Home() {
-  const { trends, loading } = useFetchTrend("movie", "week");
+  const { trends } = useFetchTrend("movie", "week");
 
   return (
-    <div style={{ display: "flex" }}>
-      {trends?.results.map((res, idx) => {
-        return (
-          <Card key={idx} poster_path={res.poster_path} title={res.title} />
-        );
-      })}
+    <div>
+      <h2>Trending Movies</h2>
+      <MoviesArticle movies={trends?.results}/>
     </div>
   );
 }
