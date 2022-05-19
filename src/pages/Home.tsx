@@ -1,5 +1,5 @@
-import Card from "../components/Card/Card";
-import MoviesArticle from "../components/MovieArticle/MoviesArticle";
+import Card from "../components/Card";
+import MoviesArticle from "../components/MovieArticle";
 
 
 import useFetchTrend from "../hooks/useFetchTrend";

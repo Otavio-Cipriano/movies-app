@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  max-width: 280px;
+  max-width: 300px;
+  min-width: 260px;
+  max-height: 300px;
   padding: 0 0.5rem;
-  height: 320px;
   padding: 0.5rem;
   overflow: hidden;
   position: relative;
@@ -13,9 +14,8 @@ export const Card = styled.div`
     width: 100%;
     height: 100%;
     /* min-height: 200px; */
-    image-rendering: -webkit-optimize-contrast;
-    /* filter: brightness(0.6); */
-    -ms-interpolation-mode: nearest-neighbor;
+    /* image-rendering: -webkit-optimize-contrast; */
+    /* object-fit: contain; */
   }
 
   p {

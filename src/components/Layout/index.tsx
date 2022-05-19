@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "../../style/globalStyle";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar";
 
 type Props = {
   children?: React.ReactNode;

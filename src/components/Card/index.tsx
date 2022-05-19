@@ -1,4 +1,4 @@
-import * as style from "./Card.style";
+import * as style from "./style";
 
 type MovieCard = {
   title: string;

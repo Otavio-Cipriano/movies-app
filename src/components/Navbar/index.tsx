@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
 
-import * as style from './Navbar.style'
+import { Nav } from './style'
 
 export default function Navbar(){
     return (
-        <style.Nav>
+        <Nav>
             <div className="logo">MarblesPrime</div>
             <ul >
                 <li><Link to=''>Home</Link></li>
@@ -12,7 +12,7 @@ export default function Navbar(){
                 <li>Movies</li>
                 <li>TV and Shows</li>
             </ul>
-        </style.Nav>
+        </Nav>
     )
 }
 
