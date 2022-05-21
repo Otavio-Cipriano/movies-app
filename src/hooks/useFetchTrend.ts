@@ -1,8 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-
-const baseUrl = process.env.REACT_APP_API_BASE_URL
-const apiKey = process.env.REACT_APP_API_KEY
+import useRequestAPI from "./useRequestApi";
 
 type MediaType = 'all' | 'movie' | 'tv' | 'person'
 
@@ -38,18 +35,21 @@ export default function useFetchTrend(mediaType: MediaType, timeWindow: TimeWind
     const [trends, setTrends] = useState<Trends | undefined | null>(null)
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<boolean>(false)
-    const url = `${baseUrl}trending/${mediaType}/${timeWindow}?api_key=` + apiKey 
+    const {api} = useRequestAPI()
 
     useEffect(()=>{
         setLoading(true)
-        fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            setTrends(data)
-            setLoading(false)
+        api
+        .get(`trending/${mediaType}/${timeWindow}`)
+        .then(res => {
+          setTrends(res.data)
         })
-        .catch(err => setError(true))
-    },[url])
+        .catch(function (error) {
+          console.log(error);
+          setError(error)
+        })
+        .then(()=> setLoading(false))
+    },[])
 
     return {trends, loading, error} 
 }
