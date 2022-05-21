@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 const baseUrl = process.env.REACT_APP_API_BASE_URL
@@ -50,6 +51,5 @@ export default function useFetchTrend(mediaType: MediaType, timeWindow: TimeWind
         .catch(err => setError(true))
     },[url])
 
-    // useEffect(()=>{console.log(trends)},[trends])
     return {trends, loading, error} 
 }

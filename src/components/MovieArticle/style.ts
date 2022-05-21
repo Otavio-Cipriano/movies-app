@@ -9,12 +9,12 @@ export const Car = styled.div<Group>`
   overflow: hidden;
 
   .list-container {
-    overflow-x: scroll;
-    padding: 0 3rem;
+    padding: 0 2.8rem;
   }
   .list {
     display: flex;
-    padding: 1rem 0;
+    gap: 0.8rem;
+    padding: 1.5rem 0;
     position: relative;
     z-index: 0;
     transform: ${(props) =>
@@ -23,12 +23,18 @@ export const Car = styled.div<Group>`
 
   .btn {
     position: absolute;
-    top: 50%;
+    top: 40%;
     z-index: 999;
-    color: green;
-    font-size: 2.5rem;
-    background: blue;
-    border-radius: 50%;
+    color: white;
+    font-size: 3rem;
+    background: rgba(0,0,0,0.7);
+    /* padding: 0.5rem 0.5rem 0rem 0.5rem; */
+    /* border-radius: 50%; */
+    width: 55px;
+    height: 100%;
+    top: 0;
+    display: grid;
+    place-items: center;
   }
 
   .btn-left {

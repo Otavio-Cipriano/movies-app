@@ -20,6 +20,6 @@ export default function Layout({ children }: Props) {
 }
 
 const Container = styled.div`
-  max-width: 1650px;
+  max-width: 1450px;
   margin: auto;
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  max-width: 300px;
+  max-width: 350px;
   min-width: 260px;
   max-height: 300px;
   padding: 0 0.5rem;
