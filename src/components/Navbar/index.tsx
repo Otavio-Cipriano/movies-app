@@ -7,10 +7,10 @@ export const Navbar = () => {
             Movies
         </div>
         <div className="nav__links">
-            <Link className='nav__link' href="/discover">Browse</Link>
-            <a className='nav__link' href="/a">Movies</a>
-            <a className='nav__link' href="/a">Tv Shows</a>
-            <a className='nav__link' href="/a">Favorites</a>
+          <div  className='nav__link'><Link href="/discover">Discover</Link></div>
+          <div  className='nav__link'><Link href="/">Movies</Link></div>
+          <div  className='nav__link'><Link href="/">TV Shows</Link></div>
+          <div  className='nav__link'><Link href="/">Favorites</Link></div>
         </div>
     </nav>
   )
