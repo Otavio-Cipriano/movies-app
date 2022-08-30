@@ -1,6 +1,25 @@
 .movie-card{
-    background-color: black;
-    min-height: 315px;
+    // background-color: black;
     width: 100%;
-    max-width: 250px;
+    max-width: 240px;
+    max-height: 310px;
+    overflow: hidden;
+    position: relative;
+
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    p{
+        position: absolute;
+        padding: 0 10px;
+        text-shadow: 1px 1px black;
+        bottom: -100%;
+    }
+
+    &:hover p{
+        bottom: 0;
+    }
 }
