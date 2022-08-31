@@ -1,0 +1,16 @@
+.paginate{
+    margin: 0 auto;
+    ul{
+        display: flex;
+        gap: 5px;
+        list-style: none;
+        justify-content: center;
+
+        li{
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+}
