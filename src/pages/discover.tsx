@@ -6,14 +6,14 @@ import MovieCard from "../components/MovieCard";
 import Spinner from "../components/Spinner";
 import { useMoviesList } from "../hooks/useMoviesList";
 
-interface IPaginate {
+interface IHandlePageClick {
   selected: number
 }
 
 const Discover: NextPage = () => {
   const { movies, loading, totalPages, setPage } = useMoviesList()
 
-  const handlePageClick = ({selected}: IPaginate) => {
+  const handlePageClick = ({selected}: IHandlePageClick) => {
    setPage(selected + 1)
   }
   
@@ -43,7 +43,7 @@ const Discover: NextPage = () => {
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={loading ? 0 : totalPages}
-        previousLabel="< previous"
+        previousLabel="< prev"
       />
       </div>
     </div>

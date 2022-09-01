@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export const Navbar = () => {
   return (
-    <nav className='nav'>
+    <nav className='nav container'>
         <div className="nav__logo">
             Movies
         </div>
