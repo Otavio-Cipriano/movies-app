@@ -1,16 +1,40 @@
-.paginate{
-    margin: 0 auto;
-    ul{
-        display: flex;
-        gap: 5px;
-        list-style: none;
-        justify-content: center;
+.paginate {
+  margin: 0 auto;
+  font-size: 1rem;
+  ul {
+    display: flex;
+    gap: 5px;
+    list-style: none;
+    justify-content: center;
 
-        li{
-            padding: 5px 10px;
-            background-color: black;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    li {
+      background-color: black;
+      border-radius: 5px;
+      a {
+        padding: 10px 20px;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+      }
+
+      &.disabled{
+        background-color: gray;
+        color: rgb(218, 218, 218)
+      }
+
+      &.selected{
+        background-color: gray;
+        color: rgb(218, 218, 218)
+      }
     }
+  }
+
+  .previous,
+  .next {
+    font-size: 1.4rem;
+
+    svg {
+      margin-bottom: -3px;
+    }
+  }
 }

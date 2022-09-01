@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import MovieCard from "../components/MovieCard";
+import Paginate from "../components/Paginate";
 import Spinner from "../components/Spinner";
 import { useMoviesList } from "../hooks/useMoviesList";
 
@@ -15,6 +16,7 @@ const Discover: NextPage = () => {
 
   const handlePageClick = ({selected}: IHandlePageClick) => {
    setPage(selected + 1)
+   console.log(selected)
   }
   
   return (
@@ -36,16 +38,10 @@ const Discover: NextPage = () => {
         :
         <Spinner />
       }
-      <div className="paginate">
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel="next >"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={loading ? 0 : totalPages}
-        previousLabel="< prev"
-      />
-      </div>
+      <Paginate
+        clickHandler={handlePageClick}
+        totalPages={loading ? 0 : totalPages}
+        />
     </div>
   );
 };
