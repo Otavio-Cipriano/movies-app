@@ -41,6 +41,7 @@ const Discover: NextPage = () => {
       <Paginate
         clickHandler={handlePageClick}
         totalPages={loading ? 0 : totalPages}
+        isLoading={loading}
         />
     </div>
   );

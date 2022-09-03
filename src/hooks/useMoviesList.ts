@@ -17,7 +17,6 @@ export const useMoviesList = () => {
     setLoading(true)
     tmdb.get(`/discover/movie?api_key=${API_KEY}&page=${page}`)
     .then((res) =>{
-      // console.log(res.data)
       setMovies(res.data.results)
       setPage(res.data.page)
       setTotalPages(res.data['total_pages'])

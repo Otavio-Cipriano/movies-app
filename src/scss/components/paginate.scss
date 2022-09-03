@@ -1,6 +1,7 @@
 .paginate {
   margin: 0 auto;
   font-size: 1rem;
+
   ul {
     display: flex;
     gap: 5px;
@@ -36,5 +37,9 @@
     svg {
       margin-bottom: -3px;
     }
+  }
+
+  &-loading{
+    display: none;
   }
 }

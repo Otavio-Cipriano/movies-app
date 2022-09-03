@@ -4,12 +4,13 @@ import PrevBtn from "./PrevBtn";
 
 interface IPaginate{
     clickHandler: any,
-    totalPages: number
+    totalPages: number,
+    isLoading: boolean
 }
 
-export default function Paginate({clickHandler, totalPages }: IPaginate) {
+export default function Paginate({clickHandler, totalPages, isLoading }: IPaginate) {
   return (
-    <div className="paginate">
+    <div className={`paginate ${isLoading ? 'paginate-loading':''}`}>
       <ReactPaginate
         breakLabel="..."
         nextLabel={<NextBtn/>}
@@ -17,6 +18,7 @@ export default function Paginate({clickHandler, totalPages }: IPaginate) {
         pageRangeDisplayed={3}
         pageCount={totalPages}
         previousLabel={<PrevBtn/>}
+        renderOnZeroPageCount={undefined}
       />
     </div>
   );
