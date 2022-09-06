@@ -1,7 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import ReactPaginate from "react-paginate";
 import MovieCard from "../components/MovieCard";
 import Paginate from "../components/Paginate";
 import Spinner from "../components/Spinner";
