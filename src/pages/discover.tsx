@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Filter from "../components/Filter";
 import MovieCard from "../components/MovieCard";
 import Paginate from "../components/Paginate";
 import Spinner from "../components/Spinner";
@@ -22,6 +23,7 @@ const Discover: NextPage = () => {
       <Head>
         <title>Discover</title>
       </Head>
+      <Filter/>
       {
         !loading ? 
         <div className="discover__list">

@@ -1,0 +1,32 @@
+.filter{
+    background-color: #161a20;
+    margin: 2rem 0 0 0;
+    padding: 0.5rem 1.5rem 0.7rem 1.5rem;
+    box-shadow: 0 1px 1px 0px rgb(255 255 255 / 10%), 0 -1px 1px 0px rgb(255 255 255 / 10%);
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid rgb(255 255 255 / 20%);
+    display: flex;
+    align-items: center;
+
+    span{
+        margin-right: auto;
+    }
+
+    &__group{
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+
+        select{
+            text-transform: uppercase;
+            background-color: #252530;
+            color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 3px;
+            padding: 0.3rem;
+            margin: 0 0.5rem;
+        }
+    }
+}
