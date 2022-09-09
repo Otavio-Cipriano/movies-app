@@ -16,9 +16,9 @@ enum SortBy{
 }
 
 interface DiscoverFilter{
-    sort_by: SortBy | SortBy.popularityAsc,
-    with_genres?: string,
-    without_genre?: string
+    sort_by?: SortBy | SortBy.popularityAsc,
+    with_genres?: string
+    page?: number | 1
 }
 
 export default DiscoverFilter;

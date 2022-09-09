@@ -11,10 +11,10 @@ interface IHandlePageClick {
 }
 
 const Discover: NextPage = () => {
-  const { movies, loading, totalPages, setPage } = useMoviesList()
+  const { movies, loading, totalPages, page, setPage, updateFilter } = useMoviesList({})
 
   const handlePageClick = ({selected}: IHandlePageClick) => {
-   setPage(selected + 1)
+   updateFilter('', selected + 1)
    console.log(selected)
   }
   
@@ -23,7 +23,7 @@ const Discover: NextPage = () => {
       <Head>
         <title>Discover</title>
       </Head>
-      <Filter/>
+      <Filter updateFilter={updateFilter}/>
       {
         !loading ? 
         <div className="discover__list">
@@ -42,6 +42,7 @@ const Discover: NextPage = () => {
         clickHandler={handlePageClick}
         totalPages={loading ? 0 : totalPages}
         isLoading={loading}
+        page={page}
         />
     </div>
   );

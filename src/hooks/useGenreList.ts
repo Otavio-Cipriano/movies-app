@@ -13,8 +13,8 @@ export default function useGenreList() {
     const cancelToken = axios.CancelToken.source();
     setLoading(true);
     tmdb.get(`/genre/movie/list?api_key=${API_KEY}`).then((res) => {
-      //   setGenres(res.data.results);
-      console.log(res.data);
+      setGenres(res.data.genres);
+      // console.log(res.data.genres);
       setLoading(false);
     });
 
@@ -23,7 +23,9 @@ export default function useGenreList() {
     };
   }, []);
 
+
   return {
     genres,
+    loading
   };
 }
