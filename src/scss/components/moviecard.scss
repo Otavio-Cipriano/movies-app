@@ -1,11 +1,12 @@
 .movie-card {
   // background-color: black;
   width: 100%;
-  max-width: 240px;
+  // max-width: 240px;
   // max-height: 310px;
   overflow: hidden;
   position: relative;
   border-radius: 5px;
+  aspect-ratio: 1 / 1.2;
 
   img {
     width: 100%;

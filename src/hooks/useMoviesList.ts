@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useReducer, useState } from "react";
 import DiscoverFilter from "../interfaces/discoverFilter";
 import Movie from "../interfaces/movie";
+import SortBy from "../interfaces/sortBy";
 import tmdb from "../services/tmdb";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
@@ -17,10 +18,12 @@ export const useMoviesList = ({newFilter}:IMovieList) => {
   const [totalPages, setTotalPages] = useState<number>(0)
   const [filter, setFilter] = useState<DiscoverFilter>()
 
-  const updateFilter = (genre?: string, page?: number) => {
+  const updateFilter = (genre?: string, page?: number, sortBy?: string) => {
     let params: DiscoverFilter = {}
-    params.with_genres = genre ? genre : filter?.with_genres? filter?.with_genres: '';
+
+    params.with_genres = !genre ? ' ' : genre? genre : filter?.with_genres;
     params.page = page ? page : filter?.page? filter.page : 1;
+    params.sort_by = sortBy ? `${sortBy}` : SortBy.popularityDesc;
     console.log(params)
     setFilter(params)
   }
@@ -46,6 +49,7 @@ export const useMoviesList = ({newFilter}:IMovieList) => {
     loading,
     page,
     totalPages,
+    filter,
     setPage,
     updateFilter
   };

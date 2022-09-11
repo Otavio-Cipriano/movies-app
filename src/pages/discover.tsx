@@ -11,10 +11,10 @@ interface IHandlePageClick {
 }
 
 const Discover: NextPage = () => {
-  const { movies, loading, totalPages, page, setPage, updateFilter } = useMoviesList({})
+  const { movies, loading, totalPages, page, filter, updateFilter } = useMoviesList({})
 
   const handlePageClick = ({selected}: IHandlePageClick) => {
-   updateFilter('', selected + 1)
+   updateFilter(filter?.with_genres, selected + 1)
    console.log(selected)
   }
   
@@ -36,7 +36,9 @@ const Discover: NextPage = () => {
           }
         </div> 
         :
-        <Spinner />
+        <div className="discover__loading">
+          <Spinner/>
+        </div>
       }
       <Paginate
         clickHandler={handlePageClick}
