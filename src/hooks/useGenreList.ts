@@ -14,7 +14,6 @@ export default function useGenreList() {
     setLoading(true);
     tmdb.get(`/genre/movie/list?api_key=${API_KEY}`).then((res) => {
       setGenres(res.data.genres);
-      // console.log(res.data.genres);
       setLoading(false);
     });
 

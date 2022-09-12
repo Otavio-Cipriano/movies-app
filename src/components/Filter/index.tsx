@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { TbArrowsDownUp } from "react-icons/tb";
 import useGenreList from "../../hooks/useGenreList";
-import OrderBy from "../../interfaces/orderBy";
 import SortBy from "../../interfaces/sortBy";
 
 interface IFilter {
